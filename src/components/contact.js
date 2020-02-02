@@ -28,36 +28,36 @@ class Contact extends React.Component {
                 min:5,
                 touched: false,
                 value: ''
-                }
+                },
+                send:false,
+                sent:false,
+                sending:false,
+                failed:false
         }
     }
 
-    handleForm = (e) => {
+    handleForm = async (e) => {
         let fieldname  = e.target.name;
         let  state = {...this.state}
         let prevfield  =state[fieldname]
         if(fieldname === 'contactEmail'){
             const email = this.validateEmail(e.target.value)
-            return this.setState({[fieldname]: {...prevfield, value: e.target.value,unvalidated:!email}})
+            return await this.setState({[fieldname]: {...prevfield, value: e.target.value,unvalidated:!email}})
         }
-        if(e.target.value.length >2 && fieldname !== 'contactEmail'){
-           return  this.setState({[fieldname]: {...prevfield, value: e.target.value,unvalidated:false}})
+        if(e.target.value.length >1 && fieldname !== 'contactEmail'){
+           return  await this.setState({[fieldname]: {...prevfield, value: e.target.value,unvalidated:false}})
         }
-        this.setState({[fieldname]: {...prevfield, value: e.target.value}})
-
-        const checkvalidation = Object.keys(this.state);
-        let count = 0;
-
-        checkvalidation.map(each => {
-            if(this.state[each].unvalidated === false){
-               return  count = count+ 1;
-            }
-        })
-
-        if(count >= 4 ){
-            $('.submit-button').removeAttr('disabled')
-        }
-        
+        await this.setState({[fieldname]: {...prevfield, value: e.target.value}})
+        const {contactName, contactEmail, contactSubject, contactMessage } = this.state;
+        let self = this;
+        setTimeout(() => {
+            if(contactName.unvalidated === false && 
+                contactEmail.unvalidated === false && 
+                contactSubject.unvalidated === false &&
+                contactMessage.unvalidated === false ){
+                return  self.setState({send:true})
+             }
+        }, 100)
     }
 
     handleBlur = (field) => {
@@ -74,25 +74,21 @@ class Contact extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        let count = 0;
-
-        checkvalidation.map(each => {
-            if(this.state[each].unvalidated === false){
-               return  count = count+ 1;
-            }
-        })
-
-        if(count >= 4 ){
-        const {contactName, contactEmail, contactSubject, contactMessage } = this.state;
+        const {contactName, contactEmail, contactSubject, contactMessage, sending, sent, send } = this.state;
+        let self = this;
         fetch('/api/send-email', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: contactName, email: contactEmail, subject:contactSubject, message: contactMessage })
-          });
-        }
+            body: JSON.stringify({ name: contactName.value, email: contactEmail.value, subject:contactSubject.value, message: contactMessage.value})
+          }).then(
+              self.setState({sending:false,sent:true})
+          ).catch(
+            self.setState({failed:true})
+          )
+
     }
     render(){
-        const {contactName, contactEmail, contactSubject, contactMessage } = this.state;
+        const {contactName, contactEmail, contactSubject, contactMessage , send, sending, sent, failed} = this.state;
     return (
        <section id="contact" className="s-contact target-section">
 
@@ -111,7 +107,6 @@ class Contact extends React.Component {
     <div className="col-eight tab-full contact__form">
         <form name="contactForm" >
             <fieldset>
-            <h1>{console.log(this.state)}</h1>
             <div className="form-field">
                 <input onChange={(e) => this.handleForm(e)}  onBlur={(e) => this.handleBlur(e)} name="contactName" type="text" id="contactName" placeholder="Name" value={contactName.value} minLength="2" required="" aria-required="true" className="full-width" />
                 {contactName.touched && contactName.unvalidated ? <p>min 2 chars </p>: <p></p>}
@@ -129,8 +124,8 @@ class Contact extends React.Component {
                 {contactMessage.touched && contactMessage.unvalidated ? <p>min 1 char</p>: <p></p>}
             </div>
             <div className="form-field">
-                <button className="full-width btn--primary submit-button" disabled onClick={(e) => this.handleSubmit(e)}>Submit</button>
-                <div className="submit-loader">
+                <button className="full-width btn--primary submit-button" disabled={send} onClick={(e) => this.handleSubmit(e)}>Submit</button>
+                {sending &&<div className="submit-loader">
                     <div className="text-loader">Sending...</div>
                     <div className="s-loader">
                         <div className="bounce1"></div>
@@ -138,6 +133,13 @@ class Contact extends React.Component {
                         <div className="bounce3"></div>
                     </div>
                 </div>
+                }
+                {sent &&   <div className="message-success">
+            Your message was sent, thank you!<br />
+        </div>}
+        {failed &&  <div className="message-warning">
+            Something went wrong. Please try again.
+        </div> }
             </div>
 
             </fieldset>
@@ -147,28 +149,25 @@ class Contact extends React.Component {
             Something went wrong. Please try again.
         </div> 
 
-        <div className="message-success">
-            Your message was sent, thank you!<br />
-        </div>
+       
                 
     </div>
     <div className="col-four tab-full contact__infos">
         <h4 className="h06">Phone</h4>
-        <p>Phone: (+63) 555 1212<br />
-        Mobile: (+63) 555 0100<br />
-        Fax: (+63) 555 0101
+        <p>Phone: (+91) 8074962895<br />
+        Mobile: (+91) 8008307511<br />
         </p>
 
         <h4 className="h06">Email</h4>
-        <p>someone@holawebsite.com<br />
-        info@holawebsite.com
+        <p>rakesh.tagadghar@dltapps.co.uk<br />
+        rakeshtagadghar@gmail.com
         </p>
 
         <h4 className="h06">Address</h4>
         <p>
-        1600 Amphitheatre Parkway<br />
-        Mountain View, CA<br />
-        94043 US
+        Annapurna Studio Living<br />
+        Wilson gardens, Bengaluru, KA<br />
+        500027  India
         </p>
     </div>
 
