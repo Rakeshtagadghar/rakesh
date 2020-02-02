@@ -10,7 +10,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta charset="utf-8" />
+          <meta charSet="utf-8" />
           {/* <title>Hola</title> */}
           <meta name="description" content="" />
           <meta name="author" content="" />

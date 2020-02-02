@@ -1,4 +1,46 @@
-const Contact = () => (
+import React from 'react';
+import fetch from 'isomorphic-fetch';
+
+class Contact extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            contactName: '',
+            contactEmail: '',
+            contactSubject: '',
+            contactMessage: ''
+        }
+    }
+
+    handleForm = (e) => {
+        this.setState({[e.target.name] : e.target.value})
+    }
+
+    handleSubmit(e){
+        e.preventDefault();
+        const {contactName, contactEmail, contactSubject, contactMessage } = this.state;
+        const   data =  {
+            name: contactName,   
+            email: contactEmail,  
+            subject:contactSubject,
+            message: contactMessage
+        }
+        fetch({
+            method: "POST", 
+            url:"http://localhost:3000/send", 
+            body: JSON.stringify(data)
+        }).then((response)=>{
+            if (response.data.msg === 'success'){
+                alert("Message Sent."); 
+                this.resetForm()
+            }else if(response.data.msg === 'fail'){
+                alert("Message failed to send.")
+            }
+        })
+    }
+    render(){
+        const {contactName, contactEmail, contactSubject, contactMessage } = this.state;
+    return (
        <section id="contact" className="s-contact target-section">
 
 <div className="overlay"></div>
@@ -14,23 +56,23 @@ const Contact = () => (
 
 <div className="row contact__main">
     <div className="col-eight tab-full contact__form">
-        <form name="contactForm" id="contactForm" method="post" action="">
+        <form name="contactForm" >
             <fieldset>
 
             <div className="form-field">
-                <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minLength="2" required="" aria-required="true" className="full-width" />
+                <input onChange={(e) => this.handleForm(e)} name="contactName" type="text" id="contactName" placeholder="Name" value={contactName} minLength="2" required="" aria-required="true" className="full-width" />
             </div>
             <div className="form-field">
-                <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="" aria-required="true" className="full-width" />
+                <input onChange={(e) => this.handleForm(e)} name="contactEmail" type="email" id="contactEmail" placeholder="Email" value={contactEmail} required="" aria-required="true" className="full-width" />
             </div>
             <div className="form-field">
-                <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" className="full-width" />
+                <input onChange={(e) => this.handleForm(e)} name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value={contactSubject} className="full-width" />
             </div>
             <div className="form-field">
-                <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required="" aria-required="true" className="full-width"></textarea>
+                <textarea onChange={(e) => this.handleForm(e)} name="contactMessage" id="contactMessage" value={contactMessage} placeholder="message" rows="10" cols="50" required="" aria-required="true" className="full-width"></textarea>
             </div>
             <div className="form-field">
-                <button className="full-width btn--primary">Submit</button>
+                <button className="full-width btn--primary" onClick={(e) => this.handleSubmit(e)}>Submit</button>
                 <div className="submit-loader">
                     <div className="text-loader">Sending...</div>
                     <div className="s-loader">
@@ -76,6 +118,7 @@ const Contact = () => (
 </div>
 
 </section> 
-)
+)}
+    }
 
 export default Contact;
