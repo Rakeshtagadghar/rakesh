@@ -19,24 +19,11 @@ class Contact extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         const {contactName, contactEmail, contactSubject, contactMessage } = this.state;
-        const   data =  {
-            name: contactName,   
-            email: contactEmail,  
-            subject:contactSubject,
-            message: contactMessage
-        }
-        fetch({
-            method: "POST", 
-            url:"http://localhost:3000/send", 
-            body: JSON.stringify(data)
-        }).then((response)=>{
-            if (response.data.msg === 'success'){
-                alert("Message Sent."); 
-                this.resetForm()
-            }else if(response.data.msg === 'fail'){
-                alert("Message failed to send.")
-            }
-        })
+        fetch('/api/send-email', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: contactName, email: contactEmail, subject:contactSubject, message: contactMessage })
+          });
     }
     render(){
         const {contactName, contactEmail, contactSubject, contactMessage } = this.state;
