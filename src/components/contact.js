@@ -5,25 +5,91 @@ class Contact extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            contactName: '',
-            contactEmail: '',
-            contactSubject: '',
-            contactMessage: ''
+            contactName: {
+                unvalidated:true,
+                min:2,
+                touched: false,
+                value:''
+            },
+            contactEmail:  {
+                unvalidated:true,
+                min:5,
+                touched: false,
+                value:''
+                },
+            contactSubject:  {
+                unvalidated:true,
+                min:1,
+                touched: false,
+                value:''
+                },
+            contactMessage:  {
+                unvalidated:true,
+                min:5,
+                touched: false,
+                value: ''
+                }
         }
     }
 
     handleForm = (e) => {
-        this.setState({[e.target.name] : e.target.value})
+        let fieldname  = e.target.name;
+        let  state = {...this.state}
+        let prevfield  =state[fieldname]
+        if(fieldname === 'contactEmail'){
+            const email = this.validateEmail(e.target.value)
+            return this.setState({[fieldname]: {...prevfield, value: e.target.value,unvalidated:!email}})
+        }
+        if(e.target.value.length >2 && fieldname !== 'contactEmail'){
+           return  this.setState({[fieldname]: {...prevfield, value: e.target.value,unvalidated:false}})
+        }
+        this.setState({[fieldname]: {...prevfield, value: e.target.value}})
+
+        const checkvalidation = Object.keys(this.state);
+        let count = 0;
+
+        checkvalidation.map(each => {
+            if(this.state[each].unvalidated === false){
+               return  count = count+ 1;
+            }
+        })
+
+        if(count >= 4 ){
+            $('.submit-button').removeAttr('disabled')
+        }
+        
     }
+
+    handleBlur = (field) => {
+        let fieldname  = field.target.name;
+       let  state = {...this.state}
+       let prevfield  =state[fieldname]
+        this.setState({[fieldname]: {...prevfield, touched: true}})
+    }
+
+    validateEmail(elementValue){      
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        return emailPattern.test(elementValue); 
+      } 
 
     handleSubmit(e){
         e.preventDefault();
+        let count = 0;
+
+        checkvalidation.map(each => {
+            if(this.state[each].unvalidated === false){
+               return  count = count+ 1;
+            }
+        })
+
+        if(count >= 4 ){
         const {contactName, contactEmail, contactSubject, contactMessage } = this.state;
         fetch('/api/send-email', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name: contactName, email: contactEmail, subject:contactSubject, message: contactMessage })
           });
+        }
     }
     render(){
         const {contactName, contactEmail, contactSubject, contactMessage } = this.state;
@@ -45,21 +111,25 @@ class Contact extends React.Component {
     <div className="col-eight tab-full contact__form">
         <form name="contactForm" >
             <fieldset>
-
+            <h1>{console.log(this.state)}</h1>
             <div className="form-field">
-                <input onChange={(e) => this.handleForm(e)} name="contactName" type="text" id="contactName" placeholder="Name" value={contactName} minLength="2" required="" aria-required="true" className="full-width" />
+                <input onChange={(e) => this.handleForm(e)}  onBlur={(e) => this.handleBlur(e)} name="contactName" type="text" id="contactName" placeholder="Name" value={contactName.value} minLength="2" required="" aria-required="true" className="full-width" />
+                {contactName.touched && contactName.unvalidated ? <p>min 2 chars </p>: <p></p>}
             </div>
             <div className="form-field">
-                <input onChange={(e) => this.handleForm(e)} name="contactEmail" type="email" id="contactEmail" placeholder="Email" value={contactEmail} required="" aria-required="true" className="full-width" />
+                <input onChange={(e) => this.handleForm(e)}  onBlur={(e) => this.handleBlur(e)} name="contactEmail" type="email" id="contactEmail" placeholder="Email" value={contactEmail.value} required="" aria-required="true" className="full-width" />
+                {contactEmail.touched && contactEmail.unvalidated ? <p>should be an email </p>: <p></p>}
             </div>
             <div className="form-field">
-                <input onChange={(e) => this.handleForm(e)} name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value={contactSubject} className="full-width" />
+                <input onChange={(e) => this.handleForm(e)} onBlur={(e) => this.handleBlur(e)} name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value={contactSubject.value} className="full-width" />
+                {contactSubject.touched && contactSubject.unvalidated ? <p>min 1 char </p>: <p></p>}
             </div>
             <div className="form-field">
-                <textarea onChange={(e) => this.handleForm(e)} name="contactMessage" id="contactMessage" value={contactMessage} placeholder="message" rows="10" cols="50" required="" aria-required="true" className="full-width"></textarea>
+                <textarea onChange={(e) => this.handleForm(e)} onBlur={(e) => this.handleBlur(e)} name="contactMessage" id="contactMessage" value={contactMessage.value} placeholder="message" rows="10" cols="50" required="" aria-required="true" className="full-width"></textarea>
+                {contactMessage.touched && contactMessage.unvalidated ? <p>min 1 char</p>: <p></p>}
             </div>
             <div className="form-field">
-                <button className="full-width btn--primary" onClick={(e) => this.handleSubmit(e)}>Submit</button>
+                <button className="full-width btn--primary submit-button" disabled onClick={(e) => this.handleSubmit(e)}>Submit</button>
                 <div className="submit-loader">
                     <div className="text-loader">Sending...</div>
                     <div className="s-loader">
