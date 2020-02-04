@@ -18,16 +18,16 @@ class MyDocument extends Document {
           <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
           <link rel="icon" href="/favicon.ico" type="image/x-icon" />
           <meta name="theme-color" content="#ffffff" />
-          <script src="/js/modernizr.js"></script>
-          <script src="/js/pace.min.js"></script>
+          {/* <script src="/js/modernizr.js"></script>
+          <script src="/js/pace.min.js"></script> */}
           <link rel="manifest" href="/manifest.json"></link>
         </Head>
         <body id="top">
           <Main />
           <NextScript />
-          <script src="/js/jquery-3.4.1.min.js"></script>
+          {/* <script src="/js/jquery-3.4.1.min.js"></script>
           <script src="/js/plugins.js"></script>
-          <script src="/js/main.js"></script>
+          <script src="/js/main.js"></script> */}
         </body>
       </Html>
     );
