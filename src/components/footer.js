@@ -37,8 +37,7 @@ const Footer = () => (
 
             <div className="col-twelve">
                 <div className="copyright">
-                    <span>© Copyright Hola 2017</span> 
-                    <span>Design by <a href="https://www.styleshout.com/">styleshout</a></span>	
+                    <span>Developed by <a href="https://www.styleshout.com/">Rakesh</a></span>	
                 </div>
 
                 <div className="go-top">
