@@ -33,20 +33,6 @@ const Footer = () => (
             </div>
         </div>
 
-        <div className="row footer-bottom">
-
-            <div className="col-twelve">
-                <div className="copyright">
-                    <span>Developed by <a href="https://www.styleshout.com/">Rakesh</a></span>	
-                </div>
-
-                <div className="go-top">
-                <a className="smoothscroll" title="Back to Top" href="#top"><i className="im im-arrow-up" aria-hidden="true"></i></a>
-                </div>
-            </div>
-
-        </div>
-
     </footer>
 )
 

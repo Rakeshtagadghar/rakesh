@@ -12,11 +12,9 @@
     "fs": "^0.0.1-security",
     "isomorphic-fetch": "^2.2.1",
     "next": "^9.2.1",
-    "next-offline": "^5.0.0",
     "nodemailer": "^6.4.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-responsive-carousel": "^3.1.51"
   },
   "scripts": {
     "dev": "next dev",

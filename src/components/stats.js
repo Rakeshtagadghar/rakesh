@@ -15,9 +15,6 @@ const Stats = () => (
                 <h4>Cups of Coffee</h4>
             </div>
             <div className="col-block stats__col stats__col--highlight">
-                <div className="stats__upsign">
-                    <a href="#"><i className="im im-arrow-up" aria-hidden="true"></i></a>
-                </div>
                 <div className="stats__count">
                     110
                 </div>
