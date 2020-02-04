@@ -17,9 +17,9 @@ const Work = () => (
             <div className="item-folio">
 
                 <div className="item-folio__thumb">
-                    <a href="/images/portfolio/gallery/g-beetle.jpg" className="thumb-link" title="The Beetle Car" data-size="1050x700">
+                    <a aria-label="beetle" href="/images/portfolio/gallery/g-beetle.jpg" className="thumb-link" title="The Beetle Car" data-size="1050x700">
                         <img src="/images/portfolio/beetle.jpg" 
-                             srcSet="/images/portfolio/beetle.jpg 1x, images/portfolio/beetle@2x.jpg 2x" alt="" />
+                             srcSet="/images/portfolio/beetle.jpg 1x, images/portfolio/beetle@2x.jpg 2x" alt="beetle" />
                         <span className="shadow-overlay"></span>
                     </a>
                 </div>
@@ -33,7 +33,7 @@ const Work = () => (
                     </p>
                 </div>
 
-                <a href="https://www.behance.net/" className="item-folio__project-link" title="Project link">
+                <a aria-label="behance" href="https://www.behance.net/" className="item-folio__project-link" title="Project link">
                     <i className="im im-link"></i>
                 </a>
 
@@ -48,9 +48,9 @@ const Work = () => (
             <div className="item-folio">
 
                 <div className="item-folio__thumb">
-                    <a href="/images/portfolio/gallery/g-lighthouse.jpg" className="thumb-link" title="Lighthouse" data-size="1050x700">
+                    <a aria-label="lighthouse" href="/images/portfolio/gallery/g-lighthouse.jpg" className="thumb-link" title="Lighthouse" data-size="1050x700">
                         <img src="/images/portfolio/lighthouse.jpg" 
-                             srcSet="/images/portfolio/lighthouse.jpg 1x, images/portfolio/lighthouse@2x.jpg 2x" alt="" />
+                             srcSet="/images/portfolio/lighthouse.jpg 1x, images/portfolio/lighthouse@2x.jpg 2x" alt="lighthouse" />
                         <span className="shadow-overlay"></span>
                     </a>
                 </div>
@@ -64,7 +64,7 @@ const Work = () => (
                     </p>
                 </div>
 
-                <a href="https://www.behance.net/" className="item-folio__project-link" title="Project link">
+                <a aria-label="behance" href="https://www.behance.net/" className="item-folio__project-link" title="Project link">
                     <i className="im im-link"></i>
                 </a>
 
@@ -79,9 +79,9 @@ const Work = () => (
             <div className="item-folio">
 
                 <div className="item-folio__thumb">
-                    <a href="images/portfolio/gallery/g-salad.jpg" className="thumb-link" data-size="1050x700">
+                    <a aria-label="salad" href="images/portfolio/gallery/g-salad.jpg" className="thumb-link" data-size="1050x700">
                         <img src="/images/portfolio/salad.jpg" 
-                             srcSet="/images/portfolio/salad.jpg 1x, images/portfolio/salad@2x.jpg 2x" alt="" />
+                             srcSet="/images/portfolio/salad.jpg 1x, images/portfolio/salad@2x.jpg 2x" alt="salad" />
                         <span className="shadow-overlay"></span>
                     </a>
                 </div>
@@ -95,7 +95,7 @@ const Work = () => (
                     </p>
                 </div>
 
-                <a href="https://www.behance.net/" className="item-folio__project-link" title="Project link">
+                <a aria-label="behance" href="https://www.behance.net/" className="item-folio__project-link" title="Project link">
                     <i className="im im-link"></i>
                 </a>
 
@@ -110,9 +110,9 @@ const Work = () => (
             <div className="item-folio">
 
                 <div className="item-folio__thumb">
-                    <a href="images/portfolio/gallery/g-woodcraft.jpg" className="thumb-link" data-size="1050x700">
+                    <a aria-label="woodcraft" href="images/portfolio/gallery/g-woodcraft.jpg" className="thumb-link" data-size="1050x700">
                         <img src="/images/portfolio/woodcraft.jpg"
-                             srcSet="/images/portfolio/woodcraft.jpg 1x, images/portfolio/woodcraft@2x.jpg 2x" alt="" />
+                             srcSet="/images/portfolio/woodcraft.jpg 1x, images/portfolio/woodcraft@2x.jpg 2x" alt="woodcraft" />
                         <span className="shadow-overlay"></span>
                     </a>
                 </div>
@@ -126,7 +126,7 @@ const Work = () => (
                     </p>
                 </div>
 
-                <a href="https://www.behance.net/" className="item-folio__project-link" title="Project link">
+                <a aria-label="behance" href="https://www.behance.net/" className="item-folio__project-link" title="Project link">
                     <i className="im im-link"></i>
                 </a>
 
@@ -141,9 +141,9 @@ const Work = () => (
             <div className="item-folio">
 
                 <div className="item-folio__thumb">
-                    <a href="images/portfolio/gallery/g-skaterboy.jpg" className="thumb-link" data-size="1050x700">
+                    <a aria-label="skaterboy" href="images/portfolio/gallery/g-skaterboy.jpg" className="thumb-link" data-size="1050x700">
                         <img src="/images/portfolio/skaterboy.jpg"
-                             srcSet="/images/portfolio/skaterboy.jpg 1x, images/portfolio/skaterboy@2x.jpg 2x" alt="" />
+                             srcSet="/images/portfolio/skaterboy.jpg 1x, images/portfolio/skaterboy@2x.jpg 2x" alt="skaterboy" />
                         <span className="shadow-overlay"></span>
                     </a>
                 </div>
@@ -157,7 +157,7 @@ const Work = () => (
                     </p>
                 </div>
 
-                <a href="https://www.behance.net/" className="item-folio__project-link" title="Project link">
+                <a aria-label="behance" href="https://www.behance.net/" className="item-folio__project-link" title="Project link">
                     <i className="im im-link"></i>
                 </a>
 
@@ -172,9 +172,9 @@ const Work = () => (
             <div className="item-folio">
 
                 <div className="item-folio__thumb">
-                    <a href="/images/portfolio/gallery/g-liberty.jpg" className="thumb-link" data-size="1050x700">
+                    <a aria-label="liberty" href="/images/portfolio/gallery/g-liberty.jpg" className="thumb-link" data-size="1050x700">
                         <img src="/images/portfolio/liberty.jpg"
-                             srcSet="/images/portfolio/liberty.jpg 1x, images/portfolio/liberty@2x.jpg 2x" alt="" />
+                             srcSet="/images/portfolio/liberty.jpg 1x, images/portfolio/liberty@2x.jpg 2x" alt="liberty" />
                         <span className="shadow-overlay"></span>
                     </a>
                 </div>
@@ -188,7 +188,7 @@ const Work = () => (
                     </p>
                 </div>
 
-                <a href="https://www.behance.net/" className="item-folio__project-link" title="Project link">
+                <a aria-label="behance" href="https://www.behance.net/" className="item-folio__project-link" title="Project link">
                     <i className="im im-link"></i>
                 </a>
 
@@ -203,9 +203,9 @@ const Work = () => (
             <div className="item-folio">
 
                 <div className="item-folio__thumb">
-                    <a href="/images/portfolio/gallery/g-minimalismo.jpg" className="thumb-link" data-size="1050x700">
+                    <a aria-label="minimalismo" href="/images/portfolio/gallery/g-minimalismo.jpg" className="thumb-link" data-size="1050x700">
                         <img src="/images/portfolio/minimalismo.jpg"
-                             srcSet="images/portfolio/minimalismo.jpg 1x, images/portfolio/minimalismo@2x.jpg 2x" alt="" />
+                             srcSet="images/portfolio/minimalismo.jpg 1x, images/portfolio/minimalismo@2x.jpg 2x" alt="minimalistic" />
                         <span className="shadow-overlay"></span>
                     </a>
                 </div>
@@ -219,7 +219,7 @@ const Work = () => (
                     </p>
                 </div>
 
-                <a href="https://www.behance.net/" className="item-folio__project-link" title="Project link">
+                <a aria-label="behance" href="https://www.behance.net/" className="item-folio__project-link" title="Project link">
                     <i className="im im-link"></i>
                 </a>
 
@@ -234,9 +234,9 @@ const Work = () => (
             <div className="item-folio">
 
                 <div className="item-folio__thumb">
-                    <a href="/images/portfolio/gallery/g-shutterbug.jpg" className="thumb-link" data-size="1050x700">
+                    <a aria-label="shutterbug" href="/images/portfolio/gallery/g-shutterbug.jpg" className="thumb-link" data-size="1050x700">
                         <img src="/images/portfolio/shutterbug.jpg"
-                             srcSet="/images/portfolio/shutterbug.jpg 1x, images/portfolio/shutterbug@2x.jpg 2x" alt="" />
+                             srcSet="/images/portfolio/shutterbug.jpg 1x, images/portfolio/shutterbug@2x.jpg 2x" alt="shutterbug" />
                         <span className="shadow-overlay"></span>
                     </a>
                 </div>
@@ -250,7 +250,7 @@ const Work = () => (
                     </p>
                 </div>
 
-                <a href="https://www.behance.net/" className="item-folio__project-link" title="Project link">
+                <a aria-label="behance" href="https://www.behance.net/" className="item-folio__project-link" title="Project link">
                     <i className="im im-link"></i>
                 </a>
 

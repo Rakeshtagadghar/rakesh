@@ -9,23 +9,23 @@ const Footer = () => (
 
                 <ul className="footer-social">
                     <li><a href="#0">
-                        <i className="im im-facebook" aria-hidden="true"></i>
+                        <i className="im im-facebook" aria-hidden="true" aria-label="facebook"></i>
                         <span>Facebook</span>
                     </a></li>
                     <li><a href="#0">
-                        <i className="im im-twitter" aria-hidden="true"></i>
+                        <i className="im im-twitter" aria-hidden="true" aria-label="twitter"></i>
                         <span>Twitter</span>
                     </a></li>
                     <li><a href="#0">
-                        <i className="im im-instagram" aria-hidden="true"></i>
+                        <i className="im im-instagram" aria-hidden="true" aria-label="instagram"></i>
                         <span>Instagram</span>
                     </a></li>
                     <li><a href="#0">
-                        <i className="im im-behance" aria-hidden="true"></i>
+                        <i className="im im-behance" aria-hidden="true" aria-label="behance"></i>
                         <span>Behance</span>
                     </a></li>
                     <li><a href="#0">
-                        <i className="im im-pinterest" aria-hidden="true"></i>
+                        <i className="im im-pinterest" aria-hidden="true" aria-label="pinterest"></i>
                         <span>Pinterest</span>
                     </a></li>
                 </ul>

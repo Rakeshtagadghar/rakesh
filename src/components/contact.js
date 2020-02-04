@@ -108,18 +108,22 @@ class Contact extends React.Component {
         <form name="contactForm" >
             <fieldset>
             <div className="form-field">
+            <label for="contactName">Name</label>
                 <input onChange={(e) => this.handleForm(e)}  onBlur={(e) => this.handleBlur(e)} name="contactName" type="text" id="contactName" placeholder="Name" value={contactName.value} minLength="2" required="" aria-required="true" className="full-width" />
                 {contactName.touched && contactName.unvalidated ? <p>min 2 chars </p>: <p></p>}
             </div>
             <div className="form-field">
+            <label for="contactEmail">Email</label>
                 <input onChange={(e) => this.handleForm(e)}  onBlur={(e) => this.handleBlur(e)} name="contactEmail" type="email" id="contactEmail" placeholder="Email" value={contactEmail.value} required="" aria-required="true" className="full-width" />
                 {contactEmail.touched && contactEmail.unvalidated ? <p>should be an email </p>: <p></p>}
             </div>
             <div className="form-field">
+            <label for="contactSubject">Subject</label>
                 <input onChange={(e) => this.handleForm(e)} onBlur={(e) => this.handleBlur(e)} name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value={contactSubject.value} className="full-width" />
                 {contactSubject.touched && contactSubject.unvalidated ? <p>min 1 char </p>: <p></p>}
             </div>
             <div className="form-field">
+            <label for="contactMessage">Message</label>
                 <textarea onChange={(e) => this.handleForm(e)} onBlur={(e) => this.handleBlur(e)} name="contactMessage" id="contactMessage" value={contactMessage.value} placeholder="message" rows="10" cols="50" required="" aria-required="true" className="full-width"></textarea>
                 {contactMessage.touched && contactMessage.unvalidated ? <p>min 1 char</p>: <p></p>}
             </div>
