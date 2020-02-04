@@ -149,9 +149,6 @@ class Contact extends React.Component {
             </fieldset>
         </form>
 
-        <div className="message-warning">
-            Something went wrong. Please try again.
-        </div> 
 
        
                 

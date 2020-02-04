@@ -2,10 +2,7 @@ const Home = () => (
     <section 
     id="home" 
     className="s-home page-hero target-section" 
-    data-parallax="scroll" data-image-src="/images/hero-bg.jpg" 
-    data-natural-width="3000" 
-    data-natural-height="2000" 
-    data-position-y='center' 
+    style={{backgroundImage: "url('/images/laptop.jpg')"}}
     >
 <div className="overlay"></div>
 <div className="shadow-overlay"></div>

@@ -14,11 +14,11 @@ const Stats = () => (
                 </div>
                 <h4>Cups of Coffee</h4>
             </div>
-            <div className="col-block stats__col stats__col--highlight">
+            <div className="col-block stats__col">
                 <div className="stats__count">
-                    110
+                    10
                 </div>
-                <h4>Projects Completed</h4>
+                <h4>Project</h4>
             </div>
             <div className="col-block stats__col">
                 <div className="stats__count">
