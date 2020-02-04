@@ -8,10 +8,10 @@ const Header = () => (
 <nav className="header-nav-wrap">
     <ul className="header-nav">
         <li className="current"><a className="smoothscroll"  href="#home" title="home">Home</a></li>
-        <li><a className="smoothscroll"  href="#about" title="about">About</a></li>
-        <li><a className="smoothscroll"  href="#works" title="works">Works</a></li>
-        <li><a className="smoothscroll"  href="#blog" title="blog">Blog</a></li>
-        <li><a className="smoothscroll"  href="#contact" title="contact">Contact</a></li>
+        <li><a aria-label="about" className="smoothscroll"  href="#about" title="about">About</a></li>
+        <li><a aria-label="works" className="smoothscroll"  href="#works" title="works">Works</a></li>
+        <li><a aria-label="blog" className="smoothscroll"  href="#blog" title="blog">Blog</a></li>
+        <li><a aria-label="contact" className="smoothscroll"  href="#contact" title="contact">Contact</a></li>
     </ul>
 </nav>
 

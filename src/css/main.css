@@ -2256,7 +2256,7 @@ html.no-csstransitions .home-content__main {
 }
 
 .timeline__header .timeline__timeframe {
-    font-size: 1.4rem;
+    font-size: 2.4rem;
     line-height: 1.5;
     text-transform: uppercase;
     letter-spacing: .15rem;
@@ -2954,7 +2954,7 @@ html.no-csstransitions .home-content__main {
 .stats h4 {
     font-family: "montserrat-semibold", sans-serif;
     margin-top: 1.8rem;
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.7);
     font-size: 1.8rem;
     position: relative;
 }

@@ -42,19 +42,19 @@ const Home = () => (
 
 <ul className="home-social">
     <li>
-        <a href="https://www.facebook.com/Rakeshdrocka"><i className="im im-facebook" aria-hidden="true"></i><span>Facebook</span></a>
+        <a aria-label="facebook" href="https://www.facebook.com/Rakeshdrocka"><i className="im im-facebook" aria-hidden="true"></i><span>Facebook</span></a>
     </li>
     <li>
-        <a href="#"><i className="im im-twitter" aria-hidden="true"></i><span>Twitter</span></a>
+        <a aria-label="facebook" href="#"><i className="im im-twitter" aria-hidden="true"></i><span>Twitter</span></a>
     </li>
     <li>
-        <a href="#"><i className="im im-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+        <a aria-label="instagram" href="#"><i className="im im-instagram" aria-hidden="true"></i><span>Instagram</span></a>
     </li>
     <li>
-        <a href="#"><i className="im im-behance" aria-hidden="true"></i><span>Behance</span></a>
+        <a aria-label="behance" href="#"><i className="im im-behance" aria-hidden="true"></i><span>Behance</span></a>
     </li>
     <li>
-        <a href="#"><i className="im im-pinterest" aria-hidden="true"></i><span>Pinterest</span></a>
+        <a aria-label="pinterest" href="#"><i className="im im-pinterest" aria-hidden="true"></i><span>Pinterest</span></a>
     </li>
 </ul> 
 

@@ -3,7 +3,7 @@ import Footer from '../components/footer';
 import Home from '../components/home';
 import About from '../components/about';
 import Works from '../components/works';
-import Testimonials from '../components/testimonials';
+// import Testimonials from '../components/testimonials';
 import Blog from '../components/blog';
 import Cta from '../components/cta';
 import Stats from '../components/stats';
@@ -16,7 +16,7 @@ function HomePage() {
     <Home />
     <About />
     <Works />
-    <Testimonials />
+    {/* <Testimonials /> */}
     <Blog />
     <Cta />
     <Stats />
