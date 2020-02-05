@@ -2,7 +2,7 @@ const Home = () => (
     <section 
     id="home" 
     className="s-home page-hero target-section" 
-    style={{backgroundImage: "url('/images/laptop.jpg')"}}
+    style={{backgroundImage: "url('/images/laptop.webp')"}}
     >
 <div className="overlay"></div>
 <div className="shadow-overlay"></div>
