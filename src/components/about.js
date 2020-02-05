@@ -135,7 +135,6 @@ const About = () => (
         
 
      
-          <div className="timeline">
             <div className="timeline__block">
               <div className="timeline__bullet"></div>
               <div className="timeline__header">
@@ -151,7 +150,6 @@ const About = () => (
               </div>
             </div>
           </div>
-        </div>
         </div>
       
     
