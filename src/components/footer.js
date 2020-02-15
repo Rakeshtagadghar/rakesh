@@ -24,7 +24,7 @@ const Footer = () => (
                         <i className="im im-behance" aria-hidden="true" aria-label="behance"></i>
                         <span>Behance</span>
                     </a></li>
-                    <li><a href="#0">
+                    <li><a href="#0" aria-label="pinterest">
                         <i aria-label="pinterest" className="im im-pinterest" aria-hidden="true" aria-label="pinterest"></i>
                         <span>Pinterest</span>
                     </a></li>
