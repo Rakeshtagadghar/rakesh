@@ -2,7 +2,7 @@ const Header = () => (
      <header className="s-header">
 
 <div className="header-logo">
-    <a className="site-logo" href="index.html"><img src="/icons/android-icon-192x192.png" alt="Homepage" /></a>
+    <a className="site-logo" href="index.html"><img src="/icons/android-icon-72x72.png" alt="Homepage" /></a>
 </div>
 
 <nav className="header-nav-wrap">
