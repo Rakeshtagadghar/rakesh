@@ -86,7 +86,7 @@ const About = () => (
       </div>
     </div>
 
-    <div className="row about-content about-content--buttons">
+    {/* <div className="row about-content about-content--buttons">
       <div className="col-six tab-full left">
         <a href="#0" className="btn btn--primary full-width">
           Download My CV
@@ -97,7 +97,7 @@ const About = () => (
           Hire Me Now
         </a>
       </div>
-    </div>
+    </div> */}
 
     <div className="row about-content about-content--timeline">
       <div className="col-full text-center">
@@ -135,7 +135,6 @@ const About = () => (
         
 
      
-          <div className="timeline">
             <div className="timeline__block">
               <div className="timeline__bullet"></div>
               <div className="timeline__header">
@@ -151,7 +150,6 @@ const About = () => (
               </div>
             </div>
           </div>
-        </div>
         </div>
       
     

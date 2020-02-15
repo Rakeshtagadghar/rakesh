@@ -6,8 +6,19 @@ import Blog from '../components/blog';
 import Cta from '../components/cta';
 import Stats from '../components/stats';
 import Contact from '../components/contact';
+import { initGA, logPageView } from '../utils/analytics'
+import { useEffect } from 'react';
+
 
 function HomePage() {
+
+  useEffect(() => {
+    if (!window.GA_INITIALIZED) {
+      initGA()
+      window.GA_INITIALIZED = true
+    }
+    logPageView()
+  }, [])
     return (
     <>
     <Header />
