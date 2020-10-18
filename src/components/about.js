@@ -104,55 +104,49 @@ const About = () => (
         <h3>My Work Experience.</h3>
       </div>
 
-     
-        <div className="timeline">
-          <div className="timeline__block">
-            <div className="timeline__bullet"></div>
-            <div className="timeline__header">
-              <p className="timeline__timeframe">May 2018 - July 2019</p>
-              <h3>IEsoft Technologies</h3>
-              <h5>Software Engineer</h5>
-            </div>
-            <div className="timeline__desc">
-              <p>
-                Worked on various projects from Jquery to ionic framework and
-                little bit of ReactJs
-              </p>
-            </div>
+      <div className="timeline">
+        <div className="timeline__block">
+          <div className="timeline__bullet"></div>
+          <div className="timeline__header">
+            <p className="timeline__timeframe">Oct 2019 - Present</p>
+            <h3>DLTApps UK</h3>
+            <h5>Senior Software Engineer</h5>
           </div>
-
-          <div className="timeline__block">
-            <div className="timeline__bullet"></div>
-            <div className="timeline__header">
-              <p className="timeline__timeframe">July 2019 - Oct 2019</p>
-              <h3>Cashapona Technologies Limited</h3>
-              <h5>Software Engineer</h5>
-            </div>
-            <div className="timeline__desc">
-              <p>Worked on FNZ TA project which is written in ReactJs </p>
-            </div>
-          </div>
-        
-
-     
-            <div className="timeline__block">
-              <div className="timeline__bullet"></div>
-              <div className="timeline__header">
-                <p className="timeline__timeframe">Oct 2019 - Present</p>
-                <h3>DLTApps UK</h3>
-                <h5>Software Engineer</h5>
-              </div>
-              <div className="timeline__desc">
-                <p>
-                  Worked on FNZ ChainClear project, The world's first production
-                  blockchain ecosystem for the asset management industry
-                </p>
-              </div>
-            </div>
+          <div className="timeline__desc">
+            <p>
+              Worked on FNZ ChainClear project, The world's first production
+              blockchain ecosystem for the asset management industry
+            </p>
           </div>
         </div>
-      
-    
+
+        <div className="timeline__block">
+          <div className="timeline__bullet"></div>
+          <div className="timeline__header">
+            <p className="timeline__timeframe">July 2019 - Oct 2019</p>
+            <h3>Cashapona Technologies Limited</h3>
+            <h5>Software Engineer</h5>
+          </div>
+          <div className="timeline__desc">
+            <p>Worked on FNZ TA project which is written in ReactJs </p>
+          </div>
+        </div>
+        <div className="timeline__block">
+          <div className="timeline__bullet"></div>
+          <div className="timeline__header">
+            <p className="timeline__timeframe">May 2018 - July 2019</p>
+            <h3>IEsoft Technologies</h3>
+            <h5>Software Engineer</h5>
+          </div>
+          <div className="timeline__desc">
+            <p>
+              Worked on various projects from Jquery to ionic framework and
+              little bit of ReactJs
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 );
 

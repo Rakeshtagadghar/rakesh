@@ -24,9 +24,9 @@ function HomePage() {
     <Header />
     <Home />
     <About />
-    <Blog />
-    <Cta />
-    <Stats />
+    {/* <Blog /> */}
+    {/* <Cta /> */}
+    {/* <Stats /> */}
     <Contact />
     <Footer />
     </>
